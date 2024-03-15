@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Employee Management System</h1>
+<div class="form-container">
+  <input type="text" id="fullName" placeholder="Full Name">
+  <input type="date" id="dateOfJoining">
+  <input type="checkbox" id="isManager">
+  <label for="isManager">Is Manager</label>
+  <button onclick="addEmployee()">Add Employee</button>
+</div>
+<table id="employeeTable">
+  <tr>
+    <th>Employee ID</th>
+    <th>Full Name</th>
+    <th>Date of Joining</th>
+    <th>Is Manager</th>
+    <th>Action</th>
+  </tr>
+</table>
+<script src="scripts.js"></script>
+</body>
+</html>

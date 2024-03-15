@@ -6,10 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -22,7 +19,20 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int employeeId;
     private String fullName;
+    private String firstName;
+    private String lastName;
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date dateOfJoining;
     private boolean isManager;
+
+    @ManyToOne
+    @JoinColumn(name = "designation_id") // Corrected column name
+    private Designation designation;
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+        String[] parts = fullName.split(" ", 2);
+        this.firstName = parts[0];
+        this.lastName = parts.length > 1 ? parts[1] : null;
+    }
 }
