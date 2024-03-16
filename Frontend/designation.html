@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designation Management</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS file for styling -->
+</head>
+<body>
+<h1>Designation Management</h1>
+
+<div id="designationForm">
+    <h2>Add Designation</h2>
+    <input type="text" id="name" placeholder="Designation Name">
+    <input type="text" id="remark" placeholder="Remark">
+    <button onclick="addDesignation()">Add Designation</button>
+</div>
+
+<div id="designationList">
+    <h2>All Designations</h2>
+    <table id="designationsTable">
+        <thead>
+        <tr>
+            <th>Designation ID</th>
+            <th>Name</th>
+            <th>Remark</th>
+        </tr>
+        </thead>
+        <tbody id="designations"></tbody>
+    </table>
+</div>
+
+<script src="designationscript.js"></script>
+</body>
+</html>

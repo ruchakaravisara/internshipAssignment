@@ -7,6 +7,8 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -19,4 +21,7 @@ public class Designation {
     private String name;
     private String remark;
 
+    @OneToMany(mappedBy = "designation")
+    private List<Employee> employees;
 }
+
